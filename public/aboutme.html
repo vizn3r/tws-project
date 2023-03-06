@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>About Me</title>
+        <script>
+            window.onload = () => {
+                document.getElementById("my_audio").play();
+            };
+        </script>
+        <script defer async>
+            var cursors = [
+                "alias",
+                "all-scroll",
+                "auto",
+                "cell",
+                "col-resize",
+                "context-menu",
+                "copy",
+                "crosshair",
+                "default",
+                "e-resize",
+                "ew-resize",
+                "grab",
+                "grabbing",
+                "help",
+                "move",
+                "n-resize",
+                "ne-resize",
+                "nesw-resize",
+                "ns-resize",
+                "nw-resize",
+                "nwse-resize",
+                "no-drop",
+                "none",
+                "not-allowed",
+                "pointer",
+                "progress",
+                "row-resize",
+                "s-resize",
+                "se-resize",
+                "sw-resize",
+                "text",
+                "url",
+                "w-resize",
+                "wait",
+                "zoom-in",
+                "zoom-out",
+            ];
+            const randCursor = () => cursors[Math.round(Math.random() * cursors.length)];
+            setInterval(() => (document.getElementById("me").style.color = "#" + Math.floor(Math.random() * 0xffffff).toString(16)), 100);
+            setInterval(() => (document.getElementById("container").style.cursor = randCursor()), 100);
+            function swap() {
+                if (document.getElementById("gen1").checked) {
+                    if (document.getElementById("lab1").innerHTML == "Man") {
+                        document.getElementById("lab1").innerHTML = "Man";
+                        document.getElementById("lab2").innerHTML = "Woman";
+                        document.getElementById("gen1").value = "man";
+                        document.getElementById("gen2").value = "woman";
+                    }
+                }
+                if (document.getElementById("gen2").checked) {
+                    if (document.getElementById("lab2").innerHTML == "Woman") {
+                        document.getElementById("lab1").innerHTML = "Man";
+                        document.getElementById("lab2").innerHTML = "Dishwasher";
+                        document.getElementById("gen1").value = "man";
+                        document.getElementById("gen2").value = "dishwasher";
+                    }
+                }
+            }
+        </script>
+        <style>
+            * {
+                font-family: "Comic Sans ms";
+            }
+            body,
+            html {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+            }
+            #container {
+                background-image: url("/img/vibing-rainbow.gif");
+                background-attachment: fixed;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                cursor: alias;
+            }
+
+            h1 {
+                background-color: black;
+                padding: 1%;
+            }
+            p,
+            a,
+            label {
+                background-color: rgba(0, 0, 0, 0.7);
+                color: whitesmoke;
+                padding: 1%;
+                margin: 0;
+            }
+            input,
+            textarea {
+                border: none;
+            }
+            #me {
+                transition: ease 0.2s;
+            }
+            #meimg {
+                width: 69%;
+                height: 150px;
+                margin: 5% auto;
+            }
+            #nav {
+                width: 100%;
+                display: flex;
+                justify-content: space-evenly;
+            }
+            #content {
+                margin: 5% 0;
+                height: 50%;
+            }
+            #contact {
+                background-color: rgba(0, 0, 0, 0.7);
+                color: blueviolet;
+                margin: 5%;
+                padding: 1%;
+                text-align: center;
+            }
+            #form {
+                background-color: pink;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            #form div {
+                margin: 2%;
+            }
+            #info {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+            }
+            #msg textarea {
+                width: 100%;
+                padding: 0;
+                margin: 0;
+            }
+            #gender {
+                display: flex;
+                justify-content: space-evenly;
+            }
+            #gender div {
+                display: flex;
+            }
+            #sub {
+                display: flex;
+            }
+        </style>
+    </head>
+    <body>
+        <audio id="my_audio" src="/audio/red-sun.mp3" loop="loop"></audio>
+
+        <div id="container">
+            <h1 id="me">About me</h1>
+            <section id="nav">
+                <a href="/">Home</a>
+                <a href="/interests">Interests</a>
+                <a href="/school">School</a>
+                <a href="/about-me">About me</a>
+            </section>
+            <img src="/img/me.gif" alt="" id="meimg" />
+            <section id="content">
+                <p>I'm a skilled programmer who is proficient in multiple programming languages such as Go, JavaScript, TypeScript, and C.</p>
+                <p>I have a passion for electronics and computers, which I combine with my coding abilities to create innovative projects.</p>
+                <p>My experience with a wide range of programming languages and technologies allows me to tackle a diverse set of projects.</p>
+                <p>I'm a versatile developer who is able to work on both software and hardware projects.</p>
+                <p>
+                    My combination of programming and electronics knowledge makes me a valuable asset to any team working on cutting-edge technology.
+                </p>
+            </section>
+            <section id="contact">
+                <h2 id="ch">Contact</h2>
+                <a href="mailto:viznertw@gmail.com" target="_blank">Mail</a>
+                <p>+421 940 929 719</p>
+                <p>vizn3r#9727</p>
+            </section>
+            <section id="form">
+                <h2>Contact me</h2>
+                <form action="/data" method="post">
+                    <div id="info">
+                        <label for="name">Name: </label>
+                        <input type="text" name="name" required />
+                        <label for="mail">Email: </label>
+                        <input type="email" name="mail" required />
+                    </div>
+                    <div id="msg">
+                        <p>What do you want?</p>
+                        <textarea name="text" cols="30" rows="10" required></textarea>
+                    </div>
+                    <div id="gender">
+                        <div>
+                            <input type="radio" name="gender" value="man" required id="gen1" onclick="swap()" />
+                            <label for="gender" id="lab1">Man</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="gender" value="woman" required id="gen2" onclick="swap()" />
+                            <label for="gender" id="lab2">Woman</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="gender" value="other" />
+                            <label for="gender">Other</label>
+                        </div>
+                    </div>
+                    <div id="sub">
+                        <input type="checkbox" name="gdpr" required />
+                        <label for="gdpr">By checking this box you agree with us processing your information</label>
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+            </section>
+            <footer>Made w 💘 by vizn3r</footer>
+        </div>
+    </body>
+</html>

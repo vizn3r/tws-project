@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>vizn3r</title>
+        <style>
+            #ad {
+                border: solid 10px;
+                background-image: url("/img/ad.png");
+                padding: 100 500;
+            }
+            #ad:hover {
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="name">vizn3r</h1>
+        <section id="nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/interests">Interests</a></li>
+                <li><a href="/school">School</a></li>
+                <li><a href="/about-me">About me</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>What is this?</h2>
+            <article>
+                <p>This project is my personal and I'm making it for people to know me.</p>
+                <p>This page is just homepage to this project.</p>
+                <p><a href="/interests">Here</a> you can learn about my interests.</p>
+                <p><a href="/school">Here</a> you can learn about <a href="https://spsehalova.sk/" target="_blank">my school</a>.</p>
+                <p><a href="/about-me">Here</a> you can learn about me.</p>
+            </article>
+        </section>
+        <footer>Made w 💘 by vizn3r</footer>
+        <img id="ad" src="/img/ad.png" style="width: 500px" alt="ad" />
+        <script defer>
+            document.getElementById("ad").onclick = () => window.open("/trol");
+            setInterval(() => (document.getElementById("ad").style.borderColor = "#" + Math.floor(Math.random() * 0xffffff).toString(16)), 100);
+        </script>
+    </body>
+</html>

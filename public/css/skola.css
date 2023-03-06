@@ -1,0 +1,137 @@
+* {
+    font-family: "Courier New", Courier, monospace;
+}
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* container */
+.container {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-snap-type: y proximity;
+}
+.container::-webkit-scrollbar {
+    background-color: transparent;
+}
+.container::-webkit-scrollbar-thumb {
+    background-color: lightgray;
+}
+.snap {
+    scroll-snap-align: start;
+}
+
+/* heading */
+#heading {
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+#heading h1 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    z-index: 2;
+    margin: 0;
+    background-color: transparent;
+    color: black;
+    text-shadow: -5px -5px 0 #fff, -5px -5px 0 #fff, -5px -5px 0 #fff, -5px -5px 0 #fff;
+    font-size: 1000%;
+}
+#hbg {
+    background-color: white;
+    background-image: url("https://spsehalova.sk/wp-content/uploads/2019/08/pozadie-spse-e1587136124650.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    backdrop-filter: blur(5px);
+    filter: blur(5px);
+    border-bottom: #fff 5px solid;
+    -webkit-backdrop-filter: blur(5px);
+    width: 100%;
+    height: 100%;
+}
+
+/* navbar */
+#nav {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
+}
+#nav a {
+    background-color: black;
+    color: white;
+    margin: 1%;
+    padding: 1%;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/* content */
+#content {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+#content p {
+    background-color: black;
+    color: white;
+    margin: 1%;
+    padding: 1%;
+    max-width: 90%;
+    width: fit-content;
+    height: fit-content;
+}
+#content p a {
+    color: white;
+}
+#container2 {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+}
+#cbg {
+    background-image: url("https://spsehalova.sk/wp-content/uploads/2019/08/elektrotechnika.jpg");
+    background-color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    backdrop-filter: blur(5px);
+    filter: blur(5px);
+    border-bottom: #fff 5px solid;
+    -webkit-backdrop-filter: blur(5px);
+    width: 100%;
+    height: 100%;
+}
+
+/* footer */
+footer {
+    background-color: white;
+    color: black;
+    width: 100%;
+    padding: 1% 0;
+    text-align: center;
+}
+footer p {
+    margin: 0 auto;
+    padding: 1%;
+    width: fit-content;
+    background-color: black;
+    color: white;
+}
